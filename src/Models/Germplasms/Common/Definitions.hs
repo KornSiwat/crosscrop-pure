@@ -22,30 +22,31 @@ import           Models.Germplasms.Common.Attributes (Attributes,
 
 -- Germplasm
 data Germplasm =
-    Germplasm
-        { _id         :: GermplasmId
-        , _name       :: GermplasmName
-        , _attributes :: Attributes
-        }
-    deriving (Show, Eq)
+  Germplasm
+    { _id         :: GermplasmId
+    , _name       :: GermplasmName
+    , _attributes :: Attributes
+    }
+  deriving (Show, Eq)
 
 makeFieldsNoPrefix ''Germplasm
 
-makeGermplasm :: GermplasmId -> GermplasmName -> Attributes -> Either Errors Germplasm
+makeGermplasm ::
+     GermplasmId -> GermplasmName -> Attributes -> Either Errors Germplasm
 makeGermplasm x y zs = Right Germplasm {_id = x, _name = y, _attributes = zs}
 
 -- Female Germplasm
 newtype FemaleGermplasm =
-    FemaleGermplasm Germplasm
-    deriving (Show, Eq)
+  FemaleGermplasm Germplasm
+  deriving (Show, Eq)
 
 makeFemaleGermplasm :: Germplasm -> FemaleGermplasm
 makeFemaleGermplasm = FemaleGermplasm
 
 -- Male Germplasm
 newtype MaleGermplasm =
-    MaleGermplasm Germplasm
-    deriving (Show, Eq)
+  MaleGermplasm Germplasm
+  deriving (Show, Eq)
 
 makeMaleGermplasm :: Germplasm -> MaleGermplasm
 makeMaleGermplasm = MaleGermplasm

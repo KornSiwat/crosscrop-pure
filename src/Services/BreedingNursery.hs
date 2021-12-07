@@ -6,12 +6,16 @@ import           Models.Germplasms.BreedingNursery   (BreedingNurseryGermplasm)
 import           Models.Germplasms.ColdRoom          (ColdRoomGermplasm)
 import           Models.Germplasms.Common.Attributes (GermplasmId)
 import           Models.Workflow.BreedingNursery     (BreedingNursery)
+import           Models.Workflow.Common.Attributes   (Season)
 
-fromColdRoom :: [ColdRoomGermplasm] -> BreedingNursery
+fromColdRoom :: [ColdRoomGermplasm] -> Season -> BreedingNursery
 fromColdRoom = undefined
 
-fromBreedingNursery :: [BreedingNurseryGermplasm] -> BreedingNursery
+fromBreedingNursery :: [BreedingNurseryGermplasm] -> Season -> BreedingNursery
 fromBreedingNursery = undefined
 
-withdraw :: [GermplasmId] -> BreedingNursery -> Either Errors [BreedingNurseryGermplasm]
+withdraw ::
+     [GermplasmId]
+  -> BreedingNursery
+  -> Either Errors [BreedingNurseryGermplasm]
 withdraw = undefined
